@@ -7,7 +7,7 @@ const MyFooter = function () {
   return (
     <Container fluid className="px-4 my-footer">
       <Row className="justify-content-center mt-5 g-0">
-        <Col sm={12} md={10} lg={6}>
+        <Col sm={12} md={10} lg={8}>
           <Row>
             <Col className="mb-2">
               <i className="bi bi-facebook footer-icon me-2"></i>
@@ -22,31 +22,24 @@ const MyFooter = function () {
               <Row>
                 <Col className="footer-links">
                   <p>
-                    <a href="#i">Audio and Subtitles</a>
+                    <a href="#i" className="text-black text-decoration-none">
+                      Audio and Subtitles
+                    </a>
                   </p>
                   <p>
-                    <a href="#i">Media Center</a>
+                    <a href="#i" className="text-black text-decoration-none">
+                      Media Center
+                    </a>
                   </p>
                   <p>
-                    <a href="#i">Privacy</a>
+                    <a href="#i" className="text-black text-decoration-none">
+                      Privacy
+                    </a>
                   </p>
                   <p>
-                    <a href="#i">Contact us</a>
-                  </p>
-                </Col>
-              </Row>
-            </Col>
-            <Col>
-              <Row>
-                <Col className="footer-links">
-                  <p>
-                    <a href="#i">Audio Description</a>
-                  </p>
-                  <p>
-                    <a href="#i">Investor Relations</a>
-                  </p>
-                  <p>
-                    <a href="#i">Legal Notices</a>
+                    <a href="#i" className="text-black text-decoration-none">
+                      Contact us
+                    </a>
                   </p>
                 </Col>
               </Row>
@@ -55,13 +48,19 @@ const MyFooter = function () {
               <Row>
                 <Col className="footer-links">
                   <p>
-                    <a href="#i">Help Center</a>
+                    <a href="#i" className="text-black text-decoration-none">
+                      Audio Description
+                    </a>
                   </p>
                   <p>
-                    <a href="#i">Jobs</a>
+                    <a href="#i" className="text-black text-decoration-none">
+                      Investor Relations
+                    </a>
                   </p>
                   <p>
-                    <a href="#i">Cookie Preferences</a>
+                    <a href="#i" className="text-black text-decoration-none">
+                      Legal Notices
+                    </a>
                   </p>
                 </Col>
               </Row>
@@ -70,13 +69,40 @@ const MyFooter = function () {
               <Row>
                 <Col className="footer-links">
                   <p>
-                    <a href="#i">Gift Cards</a>
+                    <a href="#i" className="text-black text-decoration-none">
+                      Help Center
+                    </a>
                   </p>
                   <p>
-                    <a href="#i">Terms of Use</a>
+                    <a href="#i" className="text-black text-decoration-none">
+                      Jobs
+                    </a>
                   </p>
                   <p>
-                    <a href="#i">Corporate Information</a>
+                    <a href="#i" className="text-black text-decoration-none">
+                      Cookie Preferences
+                    </a>
+                  </p>
+                </Col>
+              </Row>
+            </Col>
+            <Col>
+              <Row>
+                <Col className="footer-links">
+                  <p>
+                    <a href="#i" className="text-black text-decoration-none">
+                      Gift Cards
+                    </a>
+                  </p>
+                  <p>
+                    <a href="#i" className="text-black text-decoration-none">
+                      Terms of Use
+                    </a>
+                  </p>
+                  <p>
+                    <a href="#i" className="text-black text-decoration-none">
+                      Corporate Information
+                    </a>
                   </p>
                 </Col>
               </Row>

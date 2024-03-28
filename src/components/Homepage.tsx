@@ -1,43 +1,41 @@
 import Carousel from "react-bootstrap/Carousel";
+import { useState, useEffect } from "react";
 
+import { ArticleInterface, Result } from "../interfaces/Article";
 const Homepage = function () {
+  const [artic, setArtic] = useState<Result[]>([]);
+
+  const fetchArticles = function () {
+    fetch("https://api.spaceflightnewsapi.net/v4/articles")
+      .then((response) => {
+        if (response.ok) {
+          return response.json();
+        } else {
+          throw new Error("Errore nella chiamata API");
+        }
+      })
+      .then((articleObj: ArticleInterface) => {
+        setArtic(articleObj.results);
+      })
+      .catch((error) => console.log("ERRORE", error));
+  };
+
+  useEffect(() => {
+    fetchArticles();
+  }, []);
+
   return (
     <Carousel>
-      <Carousel.Item>
-        <img
-          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSPQZhXQzwKSAit3oIk_9Se8fW37rGRUmHuoQ&usqp=CAU"
-          alt="meteo"
-          className="w-100"
-        />
-        <Carousel.Caption>
-          <h3>First slide label</h3>
-          <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
-        </Carousel.Caption>
-      </Carousel.Item>
-      <Carousel.Item>
-        <img
-          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSPQZhXQzwKSAit3oIk_9Se8fW37rGRUmHuoQ&usqp=CAU"
-          alt="meteo"
-          className="w-100"
-        />
-
-        <Carousel.Caption>
-          <h3>Second slide label</h3>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-        </Carousel.Caption>
-      </Carousel.Item>
-      <Carousel.Item>
-        <img
-          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSPQZhXQzwKSAit3oIk_9Se8fW37rGRUmHuoQ&usqp=CAU"
-          alt="meteo"
-          className="w-100"
-        />
-
-        <Carousel.Caption>
-          <h3>Third slide label</h3>
-          <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
-        </Carousel.Caption>
-      </Carousel.Item>
+      {artic
+        .map((a) => (
+          <Carousel.Item key={a.id}>
+            <img src={a.image_url} alt="meteo" className="w-100" />
+            <Carousel.Caption className="my-carousel">
+              <h3>{a.title}</h3>
+            </Carousel.Caption>
+          </Carousel.Item>
+        ))
+        .slice(1, 4)}
     </Carousel>
   );
 };

@@ -11,6 +11,7 @@ import MyHeader from "./components/MyHeader";
 
 import MyFooter from "./components/MyFooter";
 import ArticleList from "./components/ArticleList";
+import ArticleDetail from "./components/ArticleDetail";
 
 function App() {
   return (
@@ -38,6 +39,10 @@ function App() {
           </Routes>
           <Routes>
             <Route path="/article" />
+          </Routes>
+
+          <Routes>
+            <Route path="/details/:articleId" element={<ArticleDetail />} />
           </Routes>
           <MyFooter />
         </Container>

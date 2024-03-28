@@ -14,8 +14,9 @@ const ArticleList = function () {
           throw new Error("Errore nella chiamata API");
         }
       })
-      .then((articleArray: ArticleInterface) => {
-        setArts(articleArray.results);
+      .then((articleObj: ArticleInterface) => {
+        const removeSeven = articleObj.results.filter((_, index) => index !== 7);
+        setArts(removeSeven);
       })
       .catch((error) => console.log("ERRORE", error));
   };
